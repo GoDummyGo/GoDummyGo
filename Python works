@@ -1,0 +1,130 @@
+def CtoF1(degreeC: float) -> float:
+    degreeF = degreeC * 1.8 + 32
+    print(degreeC, ' degree Celcius is equal to ', degreeF, ' degree Farenheit.')
+
+def CtoF2(degreeC: float) -> float:
+    degreeF = degreeC * 1.8 + 32
+    return degreeF
+
+
+print('Please indicate what exercise to try, 306, 305, 304, 303, 302, 301, 204, 202, 104, or 102?')
+example = int(input())
+print('\nExcercise %d' %example)
+
+if example == 102:
+    #Python 學程作業102
+    print('Please input a float number')
+    num1 = eval (input())
+    print('|{:7.5f}|'.format(num1))
+
+elif example == 104:
+    #Python 學程作業104
+    import math
+    pie = math.pi
+    print('Please input the radius')
+    num1 = eval(input())
+    print('the radius is : {:<10.5f}'.format(num1))
+    print('the area is   : {:<20.5f}'.format(pow(num1,2)*pie))
+    print('the area is   : {:<15.5f}'.format(2*num1*pie))
+
+elif example == 202:
+    #Python 學程作業202
+    print('Please enter an integer')
+    num1 = int(input())
+    if (num1%3==0)&(num1%5==0):
+        print("%d 是 3跟5的倍數。"%num1)
+    elif (num1%3==0):
+        print('%d 是 3的倍數。'% num1)
+    elif (num1%5==0):
+        print('%d 是 5的倍數。'% num1)
+    else:
+        print('%d 不是 3，也不是跟5的倍數。'% num1)
+
+elif example == 204:
+    #Python 學程作業204
+    import math
+    print('Please input the 1st float number')
+    num1 = eval(input())
+    print('Please input the 2nd float number')
+    num2 = eval(input())
+    print('Please input the math operator')
+    opr = input()
+    ans = 0
+
+    print('{:f} '.format(num1) +str(opr) + ' {:f} ='.format(num2))
+    if opr == '+': ans = num1 + num2
+    elif opr == '-': ans = num1 - num2
+    elif opr == '*': ans = num1 * num2
+    elif opr == '/': ans = num1 / num2
+    elif opr == '//': ans = num1 // num2
+    elif opr == '%': ans = num1 % num2
+
+    print('{:f}'.format(ans))
+
+elif example == 301:
+    #Python For 迴圈 as 301
+    print('\n example 1')
+    fruits = ["apple", "banana", "cherry"]
+    for x in fruits:
+        print('I have a fruit, ',x)
+    
+    print('\n example 2')
+    for i in range(5):
+        print('Number',i)
+
+    print('\n example 3')
+    print('Please input a name')
+    nameI = str(input())
+    #name = 'Jane'
+    for i in range(len(nameI)):
+        print(i, ' ', nameI[i])
+    print('There are ', len(nameI) , ' letters in this name ,' , nameI, '.')
+
+elif example == 302:
+    #Python while 迴圈 as 302
+    print('Please input a name')
+    nameI = str(input())
+    i = 0
+    while i < len(nameI):
+        print(i, '', nameI[i])
+        i = i+1
+    print('There are ', len(nameI) , ' letters in this name ,' , nameI, '.')
+
+elif example == 303:
+    #Python while 迴圈 as 303
+    sentenceI = input('Please input a sentence')
+    for letter in sentenceI:
+        if letter.isupper():
+            continue
+        print(letter, end='')
+
+elif example == 304:
+    #Python for 迴圈 as 304
+    a = int (input('Please input a number') )
+    b = int (input('Please input a number, larger than the previous one') )
+    ans = 0
+
+    for i in range(a, b+1, 1):
+        if i % 2 == 0:
+            ans += i
+    print('the sum of evens numbers from ', a, ' to ', b ,' is ', ans)
+
+elif example == 305:
+    #Python for 迴圈 as 305
+    a = float (input('Please input the degree in Celcius') )
+    print('Your input is ', a ,'degree Celcius.')
+    CtoF1(a)
+
+elif example == 306:
+    #Python for 迴圈 as 305
+    a = float (input('Please input the degree in Celcius') )
+    print('Your input is ', a ,'degree Celcius.')
+    print(a, ' degree Celcius is equal to ', CtoF2(a), ' degree Farenheit.') 
+
+else:
+    #沒有這個案例
+    print('sorry no such an example now')
+
+print('\n\nOk, bye~')
+
+
